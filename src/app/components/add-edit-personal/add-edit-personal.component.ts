@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Personal } from 'src/app/interfaces/personal';
 
 @Component({
   selector: 'app-add-edit-personal',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AddEditPersonalComponent {
 
+  formPersonal: FormGroup;
+
+  constructor(private fb: FormBuilder){
+    this.formPersonal = this.fb.group({
+      documento: ['', Validators.required],
+      correo: ['', Validators.email],
+    })
+  }
+  addPersonal(){
+    // const personal: Personal = {
+    //   Documento:
+    // }
+  }
 }
