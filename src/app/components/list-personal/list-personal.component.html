@@ -1,1 +1,41 @@
-<p>list-personal works!</p>
+<div class="container">
+  <div class="title">
+    <h4>Listado de Personal</h4>
+    <!-- se redirecciona a la ruta de ADD con el routerLink-->
+    <button type="button" class="btn btn-primary" routerLink="/add">Agregar Personal</button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Documento</th>
+        <th scope="col">Primer Nombre</th>
+        <th scope="col">Primer Apellido</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Foto</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- se itera el arreglo creado en list-personal.components donde esta creado el personal -->
+      <tr *ngFor="let item of listPersonal">
+        <td> {{item.documento}} </td>
+        <td> {{item.primernombre}} </td>
+        <td> {{item.primerapellido}} </td>
+        <td> {{item.telefono}} </td>
+        <td> {{item.sexo}} </td>
+        <td> {{item.correo}} </td>
+        <td> {{item.foto}} </td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm" routerLink="/edit/{{item.id}}">Editar</button>
+          <button type="button" class="btn btn-dark disabled btn-sm ">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
