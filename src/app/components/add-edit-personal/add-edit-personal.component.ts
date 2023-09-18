@@ -25,10 +25,17 @@ export class AddEditPersonalComponent {
     })
   }
   addPersonal(){
-    console.log(this.formPersonal.value.document);
-    // const personal: Personal = {
+    // console.log(this.formPersonal.value.document);
 
-    // }
-
+    const personal: Personal = {
+      documento: this.formPersonal.value.document,
+      primernombre: this.formPersonal.value.firstName,
+      primerapellido: this.formPersonal.value.firstLastName,
+      telefono: this.formPersonal.value.phone,
+      sexo: this.formPersonal.value.genero,
+      correo: this.formPersonal.value.email,
+      foto: this.formPersonal.value.photo,
+      }
+      console.log(personal);
   }
 }
