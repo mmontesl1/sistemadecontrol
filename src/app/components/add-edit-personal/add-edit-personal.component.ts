@@ -11,15 +11,24 @@ export class AddEditPersonalComponent {
 
   formPersonal: FormGroup;
 
+  //clase inyectada en inyeccion de dependencia
   constructor(private fb: FormBuilder){
     this.formPersonal = this.fb.group({
-      documento: ['', Validators.required],
-      correo: ['', Validators.email],
+      document: ['', Validators.required],
+      firstName: ['', Validators.required],
+      firstLastName: ['', Validators.required],
+      phone: ['', Validators.required],
+      genero: ['', Validators.required],
+      email: ['', Validators.email],
+      photo: ['', Validators.required],
+
     })
   }
   addPersonal(){
+    console.log(this.formPersonal.value.document);
     // const personal: Personal = {
-    //   Documento:
+
     // }
+
   }
 }

@@ -5,25 +5,36 @@
       <div class="card-body">
 
         <form [formGroup]="formPersonal" (ngSubmit)="addPersonal()">
-          <input formControlName="documento" type="text" class="form-control mt-1" placeholder="Ingrese documento">
-          <input type="text" class="form-control mt-1" placeholder="Ingrese Nombre">
-          <input type="text" class="form-control mt-1" placeholder="Ingrese Apellido">
-          <input type="text" class="form-control mt-1" placeholder="Ingrese Telefono">
-          <input type="text" class="form-control mt-1" placeholder="Ingrese Genero">
-          <input formControlName="correo" type="email" class="form-control mt-1" placeholder="Ingrese Correo">
-          <input type="text" class="form-control mt-1" placeholder="Foto">
-        </form>
+          <input formControlName="document" type="text" class="form-control mt-1" placeholder="Ingrese documento">
+          <span *ngIf="formPersonal.get('document')?.hasError('requered') && formPersonal.get('document')?.touched"> El campo es <strong>requerido</strong> </span>
+
+          <input formControlName="firstName" type="text" class="form-control mt-1" placeholder="Ingrese Nombre">
+          <span *ngIf="formPersonal.get('firstName')?.hasError('requered') && formPersonal.get('firstName')?.touched" > El campo es <strong>requerido</strong> </span>
+
+          <input formControlName="firstLastName" type="text" class="form-control mt-1" placeholder="Ingrese Apellido">
+          <span *ngIf="formPersonal.get('firstLastName')?.hasError('requered') && formPersonal.get('firstLastName')?.touched"> El campo es <strong>requerido</strong> </span>
+
+          <input formControlName="phone" type="text" class="form-control mt-1" placeholder="Ingrese Telefono">
+          <span *ngIf="formPersonal.get('phone')?.hasError('requered') && formPersonal.get('phone')?.touched"> El campo es <strong>requerido</strong> </span>
+
+          <input formControlName="genero" type="text" class="form-control mt-1" placeholder="Ingrese Genero">
+          <span *ngIf="formPersonal.get('genero')?.hasError('requered') && formPersonal.get('genero')?.touched"> El campo es <strong>requerido</strong> </span>
+
+          <input formControlName="email" type="email" class="form-control mt-1" placeholder="Ingrese Correo">
+          <span *ngIf="formPersonal.get('email')?.hasError('requered') && formPersonal.get('email')?.touched"> El campo es <strong>requerido</strong> </span>
+
+          <input formControlName="photo" type="text" class="form-control mt-1" placeholder="Foto">
+          <span *ngIf="formPersonal.get('photo')?.hasError('requered') && formPersonal.get('photo')?.touched"> El campo es <strong>requerido</strong> </span>
 
         <div class="row mt-2 text-center">
           <div class="col-lg-6">
-            <button type="submit" class="btn btn-primary ">Aceptar</button>
+            <button [disabled]="formPersonal.invalid" type="submit" class="btn btn-primary ">Aceptar</button>
           </div>
           <div class="col-lg-6">
             <button routerLink="/" type="button" class="btn btn-secondary">volver</button>
           </div>
-
         </div>
-
+      </form>
       </div>
     </div>
   </div>

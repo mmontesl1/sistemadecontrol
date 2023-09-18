@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // modulos
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
 
 //COMPONENTES
 import { NavbarComponent } from './components/navbar/navbar.component';
